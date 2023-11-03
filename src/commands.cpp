@@ -41,6 +41,8 @@ extern int g_targetController;
 
 extern bool practiceMode;
 
+extern bool practiceMode;
+
 void ParseChatCommand(const char *pMessage, CCSPlayerController *pController)
 {
 	if (!pController)

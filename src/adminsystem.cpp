@@ -32,6 +32,8 @@ extern CEntitySystem *g_pEntitySystem;
 
 CAdminSystem* g_pAdminSystem = nullptr;
 
+bool practiceMode = false;
+
 CUtlMap<uint32, FnChatCommandCallback_t> g_CommandList(0, 0, DefLessFunc(uint32));
 
 bool practiceMode = false;
