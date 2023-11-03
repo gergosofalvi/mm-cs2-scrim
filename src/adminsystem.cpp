@@ -37,6 +37,8 @@ bool practiceMode = false;
 CUtlMap<uint32, FnChatCommandCallback_t> g_CommandList(0, 0, DefLessFunc(uint32));
 
 bool practiceMode = false;
+extern CUtlVector <CCSPlayerController*> coaches;
+extern void print_coaches();
 
 #define ADMIN_PREFIX "Admin %s has "
 
@@ -1113,7 +1115,6 @@ void CGagInfraction::UndoInfraction(ZEPlayer *player)
 }
 
 //CS2Scrim custom commands
-
 CON_COMMAND_CHAT(scrim, "Scrim mode")
 {
 	if (!player)
@@ -1128,7 +1129,8 @@ CON_COMMAND_CHAT(scrim, "Scrim mode")
 		ClientPrint(player, HUD_PRINTTALK, CHAT_PREFIX "You don't have access to this command.");
 		return;
 	}
-
+	
+	print_coaches();
 
 	practiceMode = false;
 	
